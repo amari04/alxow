@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Room:
+  = @inventary.room
+%p
+  %b Invent numb:
+  = @inventary.invent_numb
+%p
+  %b Type:
+  = @inventary.type
+%p
+  %b Status:
+  = @inventary.status
+
+= link_to 'Edit', edit_inventary_path(@inventary)
+\|
+= link_to 'Back', inventaries_path

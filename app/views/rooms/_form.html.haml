@@ -1,0 +1,22 @@
+= form_for @room do |f|
+  - if @room.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@room.errors.count, "error")} prohibited this room from being saved:"
+      %ul
+        - @room.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :count_living_space
+    = f.number_field :count_living_space
+  .field
+    = f.label :square
+    = f.number_field :square
+  .field
+    = f.label :bathroom
+    = f.check_box :bathroom
+  .field
+    = f.label :toilet
+    = f.check_box :toilet
+  .actions
+    = f.submit 'Save'

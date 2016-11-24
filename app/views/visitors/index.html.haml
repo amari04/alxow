@@ -1,0 +1,27 @@
+%h1 Listing visitors
+
+%table
+  %thead
+    %tr
+      %th Person
+      %th Start date
+      %th Finish date
+      %th Accommodation
+      %th
+      %th
+      %th
+
+  %tbody
+    - @visitors.each do |visitor|
+      %tr
+        %td= visitor.person
+        %td= visitor.start_date
+        %td= visitor.finish_date
+        %td= visitor.accommodation
+        %td= link_to 'Show', visitor
+        %td= link_to 'Edit', edit_visitor_path(visitor)
+        %td= link_to 'Destroy', visitor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Visitor', new_visitor_path

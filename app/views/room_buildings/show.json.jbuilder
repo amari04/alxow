@@ -1,0 +1,1 @@
+json.partial! "room_buildings/room_building", room_building: @room_building

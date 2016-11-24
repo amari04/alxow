@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Person:
+  = @request.person
+%p
+  %b Description:
+  = @request.description
+%p
+  %b Status:
+  = @request.status
+%p
+  %b Type:
+  = @request.type
+
+= link_to 'Edit', edit_request_path(@request)
+\|
+= link_to 'Back', requests_path

@@ -1,0 +1,1 @@
+json.partial! "beddings/bedding", bedding: @bedding

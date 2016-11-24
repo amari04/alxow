@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  person: one
+  count: 1
+  type: MyText
+
+two:
+  person: two
+  count: 1
+  type: MyText

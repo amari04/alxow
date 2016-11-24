@@ -1,0 +1,27 @@
+%h1 Listing room_buildings
+
+%table
+  %thead
+    %tr
+      %th Room
+      %th Building
+      %th Floor
+      %th Attribute
+      %th
+      %th
+      %th
+
+  %tbody
+    - @room_buildings.each do |room_building|
+      %tr
+        %td= room_building.room
+        %td= room_building.building
+        %td= room_building.floor
+        %td= room_building.attribute
+        %td= link_to 'Show', room_building
+        %td= link_to 'Edit', edit_room_building_path(room_building)
+        %td= link_to 'Destroy', room_building, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Room building', new_room_building_path

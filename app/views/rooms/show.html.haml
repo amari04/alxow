@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Count living space:
+  = @room.count_living_space
+%p
+  %b Square:
+  = @room.square
+%p
+  %b Bathroom:
+  = @room.bathroom
+%p
+  %b Toilet:
+  = @room.toilet
+
+= link_to 'Edit', edit_room_path(@room)
+\|
+= link_to 'Back', rooms_path

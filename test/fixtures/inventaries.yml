@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room: one
+  invent_numb: 1
+  type: MyText
+  status: MyText
+
+two:
+  room: two
+  invent_numb: 1
+  type: MyText
+  status: MyText

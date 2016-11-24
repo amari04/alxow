@@ -1,0 +1,1 @@
+json.array! @executors, partial: 'executors/executor', as: :executor

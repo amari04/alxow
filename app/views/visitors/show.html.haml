@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Person:
+  = @visitor.person
+%p
+  %b Start date:
+  = @visitor.start_date
+%p
+  %b Finish date:
+  = @visitor.finish_date
+%p
+  %b Accommodation:
+  = @visitor.accommodation
+
+= link_to 'Edit', edit_visitor_path(@visitor)
+\|
+= link_to 'Back', visitors_path

@@ -1,0 +1,22 @@
+= form_for @inventary do |f|
+  - if @inventary.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@inventary.errors.count, "error")} prohibited this inventary from being saved:"
+      %ul
+        - @inventary.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :room
+    = f.text_field :room
+  .field
+    = f.label :invent_numb
+    = f.number_field :invent_numb
+  .field
+    = f.label :type
+    = f.text_area :type
+  .field
+    = f.label :status
+    = f.text_area :status
+  .actions
+    = f.submit 'Save'

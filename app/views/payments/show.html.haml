@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Student:
+  = @payment.student
+%p
+  %b Worker:
+  = @payment.worker
+%p
+  %b Cost:
+  = @payment.cost
+%p
+  %b Status:
+  = @payment.status
+
+= link_to 'Edit', edit_payment_path(@payment)
+\|
+= link_to 'Back', payments_path

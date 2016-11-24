@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Person:
+  = @bedding.person
+%p
+  %b Count:
+  = @bedding.count
+%p
+  %b Type:
+  = @bedding.type
+
+= link_to 'Edit', edit_bedding_path(@bedding)
+\|
+= link_to 'Back', beddings_path

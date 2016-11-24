@@ -1,0 +1,27 @@
+%h1 Listing rooms
+
+%table
+  %thead
+    %tr
+      %th Count living space
+      %th Square
+      %th Bathroom
+      %th Toilet
+      %th
+      %th
+      %th
+
+  %tbody
+    - @rooms.each do |room|
+      %tr
+        %td= room.count_living_space
+        %td= room.square
+        %td= room.bathroom
+        %td= room.toilet
+        %td= link_to 'Show', room
+        %td= link_to 'Edit', edit_room_path(room)
+        %td= link_to 'Destroy', room, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Room', new_room_path

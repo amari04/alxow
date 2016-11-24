@@ -1,0 +1,19 @@
+= form_for @bedding do |f|
+  - if @bedding.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@bedding.errors.count, "error")} prohibited this bedding from being saved:"
+      %ul
+        - @bedding.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :person
+    = f.text_field :person
+  .field
+    = f.label :count
+    = f.text_field :count
+  .field
+    = f.label :type
+    = f.text_area :type
+  .actions
+    = f.submit 'Save'

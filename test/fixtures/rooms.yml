@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  count_living_space: 1
+  square: 1
+  bathroom: false
+  toilet: false
+
+two:
+  count_living_space: 1
+  square: 1
+  bathroom: false
+  toilet: false

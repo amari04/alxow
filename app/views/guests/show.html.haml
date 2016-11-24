@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Person:
+  = @guest.person
+%p
+  %b Start date:
+  = @guest.start_date
+%p
+  %b Finish date:
+  = @guest.finish_date
+%p
+  %b Event:
+  = @guest.event
+
+= link_to 'Edit', edit_guest_path(@guest)
+\|
+= link_to 'Back', guests_path

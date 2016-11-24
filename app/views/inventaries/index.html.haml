@@ -1,0 +1,27 @@
+%h1 Listing inventaries
+
+%table
+  %thead
+    %tr
+      %th Room
+      %th Invent numb
+      %th Type
+      %th Status
+      %th
+      %th
+      %th
+
+  %tbody
+    - @inventaries.each do |inventary|
+      %tr
+        %td= inventary.room
+        %td= inventary.invent_numb
+        %td= inventary.type
+        %td= inventary.status
+        %td= link_to 'Show', inventary
+        %td= link_to 'Edit', edit_inventary_path(inventary)
+        %td= link_to 'Destroy', inventary, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Inventary', new_inventary_path

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  person: one
+  start_date: 2016-10-15
+  finish_date: 2016-10-15
+  accommodation: false
+
+two:
+  person: two
+  start_date: 2016-10-15
+  finish_date: 2016-10-15
+  accommodation: false

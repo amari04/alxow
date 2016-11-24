@@ -1,0 +1,1 @@
+json.partial! "executors/executor", executor: @executor

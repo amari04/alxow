@@ -10,10 +10,139 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918170934) do
+ActiveRecord::Schema.define(version: 20161112142327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "beddings", force: :cascade do |t|
+    t.integer  "person_id"
+    t.integer  "count"
+    t.text     "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_beddings_on_person_id", using: :btree
+  end
+
+  create_table "buildings", force: :cascade do |t|
+    t.text     "address"
+    t.integer  "floor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.integer  "building_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["building_id"], name: "index_employees_on_building_id", using: :btree
+  end
+
+  create_table "employees_posts", id: false, force: :cascade do |t|
+    t.integer "employee_id", null: false
+    t.integer "post_id",     null: false
+    t.index ["employee_id", "post_id"], name: "index_employees_posts_on_employee_id_and_post_id", using: :btree
+  end
+
+  create_table "executors", force: :cascade do |t|
+    t.integer  "request_id"
+    t.integer  "employee_id"
+    t.integer  "executortype", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["employee_id"], name: "index_executors_on_employee_id", using: :btree
+    t.index ["request_id"], name: "index_executors_on_request_id", using: :btree
+  end
+
+  create_table "guests", force: :cascade do |t|
+    t.integer  "person_id"
+    t.date     "start_date"
+    t.date     "finish_date"
+    t.text     "event"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["person_id"], name: "index_guests_on_person_id", using: :btree
+  end
+
+  create_table "inventaries", force: :cascade do |t|
+    t.integer  "room_id"
+    t.integer  "invent_numb", null: false
+    t.text     "type",        null: false
+    t.text     "status",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["room_id"], name: "index_inventaries_on_room_id", using: :btree
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "worker_id"
+    t.integer  "cost",       null: false
+    t.boolean  "status",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_payments_on_student_id", using: :btree
+    t.index ["worker_id"], name: "index_payments_on_worker_id", using: :btree
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.text     "last_name"
+    t.text     "first_name"
+    t.text     "second_name"
+    t.date     "birthday"
+    t.string   "sex"
+    t.string   "series"
+    t.string   "number"
+    t.text     "organization"
+    t.date     "pass_date"
+    t.text     "address"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer  "person_id"
+    t.text     "description", null: false
+    t.text     "status",      null: false
+    t.text     "type",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["person_id"], name: "index_requests_on_person_id", using: :btree
+  end
+
+  create_table "room_buildings", force: :cascade do |t|
+    t.integer  "room_id"
+    t.integer  "building_id"
+    t.integer  "floor",       null: false
+    t.text     "attribute"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["building_id"], name: "index_room_buildings_on_building_id", using: :btree
+    t.index ["room_id"], name: "index_room_buildings_on_room_id", using: :btree
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer  "count_living_space", null: false
+    t.integer  "square",             null: false
+    t.boolean  "bathroom",           null: false
+    t.boolean  "toilet",             null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.integer  "person_id"
+    t.boolean  "medical_certificate"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["person_id"], name: "index_students_on_person_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                           null: false
@@ -35,4 +164,33 @@ ActiveRecord::Schema.define(version: 20160918170934) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
   end
 
+  create_table "visitors", force: :cascade do |t|
+    t.integer  "person_id"
+    t.date     "start_date"
+    t.date     "finish_date"
+    t.boolean  "accommodation"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["person_id"], name: "index_visitors_on_person_id", using: :btree
+  end
+
+  create_table "workers", force: :cascade do |t|
+    t.text     "position",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "beddings", "people"
+  add_foreign_key "employees", "buildings"
+  add_foreign_key "executors", "employees"
+  add_foreign_key "executors", "requests"
+  add_foreign_key "guests", "people"
+  add_foreign_key "inventaries", "rooms"
+  add_foreign_key "payments", "students"
+  add_foreign_key "payments", "workers"
+  add_foreign_key "requests", "people"
+  add_foreign_key "room_buildings", "buildings"
+  add_foreign_key "room_buildings", "rooms"
+  add_foreign_key "students", "people"
+  add_foreign_key "visitors", "people"
 end

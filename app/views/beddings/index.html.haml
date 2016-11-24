@@ -1,0 +1,25 @@
+%h1 Listing beddings
+
+%table
+  %thead
+    %tr
+      %th Person
+      %th Count
+      %th Type
+      %th
+      %th
+      %th
+
+  %tbody
+    - @beddings.each do |bedding|
+      %tr
+        %td= bedding.person
+        %td= bedding.count
+        %td= bedding.type
+        %td= link_to 'Show', bedding
+        %td= link_to 'Edit', edit_bedding_path(bedding)
+        %td= link_to 'Destroy', bedding, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Bedding', new_bedding_path

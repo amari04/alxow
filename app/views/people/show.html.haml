@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Last name:
+  = @person.last_name
+%p
+  %b First name:
+  = @person.first_name
+%p
+  %b Second name:
+  = @person.second_name
+%p
+  %b Birthday:
+  = @person.birthday
+%p
+  %b Sex:
+  = @person.sex
+%p
+  %b Series:
+  = @person.series
+%p
+  %b Number:
+  = @person.number
+%p
+  %b Organization:
+  = @person.organization
+%p
+  %b Pass date:
+  = @person.pass_date
+%p
+  %b Address:
+  = @person.address
+
+= link_to 'Edit', edit_person_path(@person)
+\|
+= link_to 'Back', people_path

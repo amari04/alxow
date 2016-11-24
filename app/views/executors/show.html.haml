@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Request:
+  = @executor.request
+%p
+  %b Employee:
+  = @executor.employee
+%p
+  %b Executortype:
+  = @executor.executortype
+
+= link_to 'Edit', edit_executor_path(@executor)
+\|
+= link_to 'Back', executors_path

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  person: one
+  medical_certificate: false
+
+two:
+  person: two
+  medical_certificate: false
