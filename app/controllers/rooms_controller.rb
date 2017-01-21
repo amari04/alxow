@@ -61,6 +61,10 @@ class RoomsController < ApplicationController
     end
   end
 
+  def check_ctr_auth()  
+    return @current_role_user.try(:is_admin?) #or @current_role_user.try(:is_staff?)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_room

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  resources :role_users
+  resources :roles
+  get 'welcome/index', as: :index 
+  get 'welcome/insufficient_privileges', as: :ip
 
   resources :executors
   resources :requests
@@ -25,7 +28,7 @@ Rails.application.routes.draw do
   end
 
   get 'login' => 'user_sessions#new', :as => :login
-  post 'logout' => 'user_sessions#destroy', :as => :logout
+  get 'logout' => 'user_sessions#destroy', :as => :logout
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

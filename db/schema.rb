@@ -10,23 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112142327) do
+ActiveRecord::Schema.define(version: 20161203123127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "beddings", force: :cascade do |t|
     t.integer  "person_id"
-    t.integer  "count"
-    t.text     "type"
+    t.integer  "count",      null: false
+    t.text     "type",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_beddings_on_person_id", using: :btree
   end
 
   create_table "buildings", force: :cascade do |t|
-    t.text     "address"
-    t.integer  "floor"
+    t.text     "address",    null: false
+    t.integer  "floor",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,9 +56,9 @@ ActiveRecord::Schema.define(version: 20161112142327) do
 
   create_table "guests", force: :cascade do |t|
     t.integer  "person_id"
-    t.date     "start_date"
-    t.date     "finish_date"
-    t.text     "event"
+    t.date     "start_date",  null: false
+    t.date     "finish_date", null: false
+    t.text     "event",       null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["person_id"], name: "index_guests_on_person_id", using: :btree
@@ -86,22 +86,23 @@ ActiveRecord::Schema.define(version: 20161112142327) do
   end
 
   create_table "people", force: :cascade do |t|
-    t.text     "last_name"
-    t.text     "first_name"
+    t.text     "last_name",    null: false
+    t.text     "first_name",   null: false
     t.text     "second_name"
-    t.date     "birthday"
-    t.string   "sex"
-    t.string   "series"
-    t.string   "number"
-    t.text     "organization"
-    t.date     "pass_date"
-    t.text     "address"
+    t.date     "birthday",     null: false
+    t.string   "sex",          null: false
+    t.string   "series",       null: false
+    t.string   "number",       null: false
+    t.text     "organization", null: false
+    t.date     "pass_date",    null: false
+    t.text     "address",      null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["series", "number"], name: "index_people_on_series_and_number", unique: true, using: :btree
   end
 
   create_table "posts", force: :cascade do |t|
-    t.text     "name"
+    t.text     "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -114,6 +115,24 @@ ActiveRecord::Schema.define(version: 20161112142327) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["person_id"], name: "index_requests_on_person_id", using: :btree
+  end
+
+  create_table "role_users", force: :cascade do |t|
+    t.integer  "role_id"
+    t.integer  "user_id"
+    t.jsonb    "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_role_users_on_role_id", using: :btree
+    t.index ["user_id"], name: "index_role_users_on_user_id", using: :btree
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.text     "name"
+    t.text     "shortname"
+    t.text     "englishname"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "room_buildings", force: :cascade do |t|
@@ -138,7 +157,7 @@ ActiveRecord::Schema.define(version: 20161112142327) do
 
   create_table "students", force: :cascade do |t|
     t.integer  "person_id"
-    t.boolean  "medical_certificate"
+    t.boolean  "medical_certificate", null: false
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.index ["person_id"], name: "index_students_on_person_id", using: :btree
@@ -166,9 +185,9 @@ ActiveRecord::Schema.define(version: 20161112142327) do
 
   create_table "visitors", force: :cascade do |t|
     t.integer  "person_id"
-    t.date     "start_date"
-    t.date     "finish_date"
-    t.boolean  "accommodation"
+    t.date     "start_date",    null: false
+    t.date     "finish_date",   null: false
+    t.boolean  "accommodation", null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["person_id"], name: "index_visitors_on_person_id", using: :btree
@@ -189,6 +208,8 @@ ActiveRecord::Schema.define(version: 20161112142327) do
   add_foreign_key "payments", "students"
   add_foreign_key "payments", "workers"
   add_foreign_key "requests", "people"
+  add_foreign_key "role_users", "roles"
+  add_foreign_key "role_users", "users"
   add_foreign_key "room_buildings", "buildings"
   add_foreign_key "room_buildings", "rooms"
   add_foreign_key "students", "people"
