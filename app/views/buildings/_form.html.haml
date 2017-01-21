@@ -1,16 +1,20 @@
 = form_for @building do |f|
+  = error_messages_for @building
   - if @building.errors.any?
     #error_explanation
       %h2= "#{pluralize(@building.errors.count, "error")} prohibited this building from being saved:"
       %ul
         - @building.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :address
-    = f.text_area :address
-  .field
-    = f.label :floor
-    = f.number_field :floor
+  .row
+    .col-md-4 
+      .form-group
+        = f.label :address
+        = f.text_field :address, class: 'form-control'
+  .row
+    .col-md-1 
+      .form-group
+        = f.label :floor
+        = f.number_field :floor, class: 'form-control'
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: "btn btn-success"
