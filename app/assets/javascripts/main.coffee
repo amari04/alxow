@@ -3,5 +3,18 @@ loaderf = ->
     $('#loader').modal('show')
     true
   true
-#$(document).ready loaderf
-$(document).on 'turbolinks:load', loaderf
+dtpick = ->
+  $('.datepicker').datetimepicker({locale: 'ru', format: 'DD.MM.YYYY'})
+  false
+@datepicker_activation = ->
+  window.datepicker_activation_by_item($(document))
+@datepicker_activation_by_item = (item)->
+  item.find('.datepicker').datetimepicker({locale: 'ru', format: 'DD.MM.YYYY'})
+
+ready = ->
+  dtpick()
+  loaderf()
+  false
+
+$(document).on 'turbolinks:load', ready
+

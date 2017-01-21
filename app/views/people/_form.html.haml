@@ -6,35 +6,55 @@
         - @person.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :last_name
-    = f.text_area :last_name
-  .field
-    = f.label :first_name
-    = f.text_area :first_name
-  .field
-    = f.label :second_name
-    = f.text_area :second_name
-  .field
-    = f.label :birthday
-    = f.date_select :birthday
-  .field
-    = f.label :sex
-    = f.text_field :sex
-  .field
-    = f.label :series
-    = f.text_field :series
-  .field
-    = f.label :number
-    = f.text_field :number
-  .field
-    = f.label :organization
-    = f.text_area :organization
-  .field
-    = f.label :pass_date
-    = f.date_select :pass_date
-  .field
-    = f.label :address
-    = f.text_area :address
+  .row
+    .col-md-4 
+      .form-group
+        = f.label :last_name
+        = f.text_field :last_name, class: 'form-control'
+    .col-md-4 
+      .form-group.field
+        = f.label :first_name
+        = f.text_field :first_name, class: 'form-control'
+    .col-md-4 
+      .form-group.field
+        = f.label :second_name
+        = f.text_field :second_name, class: 'form-control'
+  .row
+    .col-md-4 
+      .form-group.field
+        = f.label :birthday
+        .input-group.date.datepicker
+          = f.text_field(:birthday, value: lnil(f.object.birthday), 
+          class: 'form-control')
+          %span.input-group-addon
+            %span.glyphicon.glyphicon-calendar
+        = f.error_messages_for(:birthday)
+        
+    .col-md-4 
+      .form-group
+        = f.label :sex
+        = f.text_field :sex, class: 'form-control'
+    .col-md-4 
+      .form-group
+        = f.label :series
+        = f.text_field :series, class: 'form-control'
+  .row
+    .col-md-4 
+      .form-group
+        = f.label :number
+        = f.text_field :number, class: 'form-control'
+    .col-md-4 
+      .form-group
+        = f.label :organization
+        = f.text_field :organization, class: 'form-control'
+    .col-md-4 
+      .form-group
+        = f.label :pass_date
+        = f.date_select :pass_date, class: 'form-control'
+  .row 
+    .col-md-4 
+      .form-group
+        = f.label :address
+        = f.text_field :address, class: 'form-control'
   .actions
     = f.submit 'Save'
