@@ -6,17 +6,23 @@
         - @request.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :person
-    = f.text_field :person
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :status
-    = f.text_area :status
-  .field
-    = f.label :type
-    = f.text_area :type
+  .row
+    .col-md-4
+      .form-group
+        = f.label :person
+        = f.text_field :person, class: 'form-control'
+      .form-group
+        = f.label :description
+        = f.text_area :description, class: 'form-control'
+  .row
+    .col-md-4
+      .form-group
+        = f.label :status
+        = f.text_field :status, class: 'form-control'
+  .row
+    .col-md-4
+      .form-group
+        = f.label :type
+        = f.text_field :type, class: 'form-control'
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: "btn btn-success"

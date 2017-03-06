@@ -5,9 +5,10 @@
       %ul
         - @employee.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :building
-    = f.text_field :building
+  .row
+    .col-md-2 
+      .form-group
+        = f.label :building
+        = f.text_field :building, class: 'form-control'
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: "btn btn-success"

@@ -1,6 +1,6 @@
 %h1 Listing workers
 
-%table
+%table.table-condensed.table-striped.table-hover
   %thead
     %tr
       %th Position
@@ -12,9 +12,9 @@
     - @workers.each do |worker|
       %tr
         %td= worker.position
-        %td= link_to 'Show', worker
-        %td= link_to 'Edit', edit_worker_path(worker)
-        %td= link_to 'Destroy', worker, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Show', worker, class: "btn btn-success"
+        %td= link_to 'Edit', edit_worker_path(worker), class: "btn btn-info"
+        %td= link_to 'Destroy', worker, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-danger"
 
 %br
 

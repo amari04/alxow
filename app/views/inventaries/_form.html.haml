@@ -5,18 +5,25 @@
       %ul
         - @inventary.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :room
-    = f.text_field :room
-  .field
-    = f.label :invent_numb
-    = f.number_field :invent_numb
-  .field
-    = f.label :type
-    = f.text_area :type
-  .field
-    = f.label :status
-    = f.text_area :status
+  .row
+    .col-md-4 
+      .form-group
+        = f.label :room
+        = f.text_field :room, class: 'form-control'
+  .row        
+    .col-md-4
+      .form-group
+        = f.label :invent_numb
+        = f.text_field :invent_numb, class: 'form-control'
+  .row
+    .col-md-4 
+      .form-group
+        = f.label :type
+        = f.text_field :type, class: 'form-control'
+  .row        
+    .col-md-4 
+      .form-group
+        = f.label :status
+        = f.text_field :status, class: 'form-control'
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: "btn btn-success"

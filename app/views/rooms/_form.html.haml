@@ -5,18 +5,19 @@
       %ul
         - @room.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :count_living_space
-    = f.number_field :count_living_space
-  .field
-    = f.label :square
-    = f.number_field :square
-  .field
-    = f.label :bathroom
-    = f.check_box :bathroom
-  .field
-    = f.label :toilet
-    = f.check_box :toilet
+  .row
+    .col-md-2 
+      .form-group
+        = f.label :count_living_space
+        = f.number_field :count_living_space, class: 'form-control'
+      .form-group
+        = f.label :square
+        = f.number_field :square, class: 'form-control'
+      .form-group
+        = f.label :bathroom
+        = f.check_box :bathroom, class: 'input-group-addon'
+      .form-group
+        = f.label :toilet
+        = f.check_box :toilet, type: 'radio', class: 'input-group-addon'
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: "btn btn-success"

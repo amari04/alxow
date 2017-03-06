@@ -6,11 +6,13 @@
         - @student.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :person
-    = f.text_field :person
-  .field
-    = f.label :medical_certificate
-    = f.check_box :medical_certificate
+  .row
+    .col-md-4
+      .form-group
+        = f.label :person
+        = f.text_field :person, class: 'form-control'
+      .form-group
+        = f.label :medical_certificate
+        = f.check_box :medical_certificate
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: "btn btn-success"

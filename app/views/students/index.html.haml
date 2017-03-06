@@ -1,6 +1,6 @@
 %h1 Listing students
 
-%table
+%table.table-condensed.table-striped.table-hover
   %thead
     %tr
       %th Person
@@ -14,9 +14,9 @@
       %tr
         %td= student.person
         %td= student.medical_certificate
-        %td= link_to 'Show', student
-        %td= link_to 'Edit', edit_student_path(student)
-        %td= link_to 'Destroy', student, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Show', student, class: "btn btn-success"
+        %td= link_to 'Edit', edit_student_path(student), class: "btn btn-info"
+        %td= link_to 'Destroy', student, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-danger"
 
 %br
 
