@@ -1,9 +1,9 @@
 ru:
   app:
-    name: БП
+    name: Информационный портал общежития вуза
     company:
       short_name:  МПУ
-      department: Кафедра 
+      department: Кафедра "Прикладная информатика"
   helpers:
     submit:
       create: Сохранить
