@@ -3,20 +3,22 @@
   .row
     .col-md-4 
       .form-group
-        = f.label :person
+        = f.label :ФИО
         = f.select :person_id, options_for_select(people_options()), {}, class: 'form-control'
         = f.error_messages_for :person
     .col-md-2 
       .form-group
-        = f.label :count
+        = f.label :Количество
         = f.number_field :count, class: 'form-control'
         = f.error_messages_for :count
     .col-md-4 
       .form-group
-        = f.label :kind
+        = f.label :Тип
         = f.text_field :kind, class: 'form-control'
         = f.error_messages_for :kind
   .row
     .col-md-4 
       .actions
         = f.submit 'Save', class: "btn btn-success"
+        \|
+        = link_to 'Back', beddings_path, class: "btn btn-success"

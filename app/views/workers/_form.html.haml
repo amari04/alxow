@@ -9,7 +9,9 @@
   .row
     .col-md-4
       .form-group
-        = f.label :position
+        = f.label :Должность
         = f.text_field :position
   .actions
     = f.submit 'Save', class: "btn btn-success"
+    \|
+    = link_to 'Back', workers_path, class: "btn btn-success"

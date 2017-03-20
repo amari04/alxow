@@ -9,20 +9,20 @@
   .row
     .col-md-4 
       .form-group
-        = f.label :last_name
+        = f.label :Фамилия
         = f.text_field :last_name, class: 'form-control'
     .col-md-4 
       .form-group.field
-        = f.label :first_name
+        = f.label :Имя
         = f.text_field :first_name, class: 'form-control'
     .col-md-4 
       .form-group.field
-        = f.label :second_name
+        = f.label :Отчество
         = f.text_field :second_name, class: 'form-control'
   .row
     .col-md-4 
       .form-group.field
-        = f.label :birthday
+        = f.label :'Дата рождения'
         .input-group.date.datepicker
           = f.text_field(:birthday, value: lnil(f.object.birthday), 
           class: 'form-control')
@@ -32,24 +32,24 @@
         
     .col-md-4 
       .form-group
-        = f.label :sex
+        = f.label :Пол
         = f.select :sex, options_for_select(sex_options()), {}, class: 'form-control'
     .col-md-4 
       .form-group
-        = f.label :series
+        = f.label :'Паспорт серия'
         = f.text_field :series, class: 'form-control'
   .row
     .col-md-4 
       .form-group
-        = f.label :number
+        = f.label :Номер
         = f.text_field :number, class: 'form-control'
     .col-md-4 
       .form-group
-        = f.label :organization
+        = f.label :'Кем выдан'
         = f.text_field :organization, class: 'form-control'
     .col-md-4 
       .form-group
-        = f.label :pass_date
+        = f.label :'Когда выдан'
         .input-group.date.datepicker
           = f.text_field(:birthday, value: lnil(f.object.birthday), 
           class: 'form-control')
@@ -59,7 +59,9 @@
   .row 
     .col-md-4 
       .form-group
-        = f.label :address
+        = f.label :'Где выдан'
         = f.text_field :address, class: 'form-control'
   .actions
-    = f.submit 'Save', class: "btn btn-success"
+    = f.submit 'Save', class: "btn btn-success" 
+    \|
+    = link_to 'Back', people_path, class: "btn btn-success"

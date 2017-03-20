@@ -1,12 +1,12 @@
-%h1 Listing requests
+%h1 Список заявок
 
-%table
+%table.table-condensed.table-striped.table-hover
   %thead
     %tr
-      %th Person
-      %th Description
-      %th Status
-      %th Kind
+      %th ФИО
+      %th Описание
+      %th Статус
+      %th Тип
       %th
       %th
       %th
@@ -24,4 +24,4 @@
 
 %br
 
-= link_to 'New Request', new_request_path, class: "btn btn-success"
+= link_to 'Новая заявка', new_request_path, class: "btn btn-success"

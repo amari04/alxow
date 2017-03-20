@@ -8,18 +8,31 @@
   .row
     .col-md-4 
       .form-group
-        = f.label :student
+        = f.label :Студент
         = f.text_field :student, class: 'form-control'
       .form-group
-        = f.label :worker
-        = f.text_field :worker, class: 'form-control'
-      .form-group
-        = f.label :cost
+        = f.label :Стоимость
         = f.text_field :cost, class: 'form-control'
-  .row
-    .col-md-4 
       .form-group
-        = f.label :status
+        = f.label :'Статус оплаты'
         = f.check_box :status
   .actions
     = f.submit 'Save', class: "btn btn-success"
+    \|
+    = link_to 'Back', payments_path, class: "btn btn-success"
+  
+  .row
+    .col-md-4 
+      .form-group
+        = f.label :Сотрудник
+        = f.text_field :worker, class: 'form-control'
+      .form-group
+        = f.label :Стоимость
+        = f.text_field :cost, class: 'form-control'
+      .form-group
+        = f.label :'Статус оплаты'
+        = f.check_box :status
+  .actions
+    = f.submit 'Save', class: "btn btn-success"
+    \|
+    = link_to 'Back', payments_path, class: "btn btn-success"

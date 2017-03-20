@@ -4,7 +4,7 @@ class CreateRequests < ActiveRecord::Migration[5.0]
       t.references :person, foreign_key: true
       t.text :description, null: false
       t.text :status, null: false
-      t.text :type, null: false
+      t.text :kind, null: false
 
       t.timestamps
     end

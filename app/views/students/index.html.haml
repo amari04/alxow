@@ -1,10 +1,10 @@
-%h1 Listing students
+%h1 Список студентов
 
-%table.table-condensed.table-striped.table-hover
+%table.table.table-striped.table-hover
   %thead
     %tr
-      %th Person
-      %th Medical certificate
+      %th Студент
+      %th Наличие медицинской справки
       %th
       %th
       %th
@@ -12,7 +12,7 @@
   %tbody
     - @students.each do |student|
       %tr
-        %td= student.person
+        %td= student.person.last_name
         %td= student.medical_certificate
         %td= link_to 'Show', student, class: "btn btn-success"
         %td= link_to 'Edit', edit_student_path(student), class: "btn btn-info"
@@ -20,4 +20,4 @@
 
 %br
 
-= link_to 'New Student', new_student_path, class: "btn btn-success"
+= link_to 'Новый студент', new_student_path, class: "btn btn-success"

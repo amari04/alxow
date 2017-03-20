@@ -1,34 +1,34 @@
 %p#notice= notice
 
 %p
-  %b Last name:
+  %b Фамилия:
   = @person.last_name
 %p
-  %b First name:
+  %b Имя:
   = @person.first_name
 %p
-  %b Second name:
+  %b Отчество:
   = @person.second_name
 %p
-  %b Birthday:
+  %b Дата рождения:
   = @person.birthday
 %p
-  %b Sex:
+  %b Пол:
   = @person.sex
 %p
-  %b Series:
+  %b Паспорт серия:
   = @person.series
 %p
-  %b Number:
+  %b Номер:
   = @person.number
 %p
-  %b Organization:
+  %b Кем выдан:
   = @person.organization
 %p
-  %b Pass date:
+  %b Когда выдан:
   = @person.pass_date
 %p
-  %b Address:
+  %b Где выдан:
   = @person.address
 
 = link_to 'Edit', edit_person_path(@person), class: "btn btn-success"

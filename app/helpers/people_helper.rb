@@ -1,6 +1,6 @@
 module PeopleHelper
   def sex_options
-    ["m","w"]
+    ["Мужчина","Женщина"]
   end
 end
 

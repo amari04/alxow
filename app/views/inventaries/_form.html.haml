@@ -8,22 +8,24 @@
   .row
     .col-md-4 
       .form-group
-        = f.label :room
+        = f.label :Комната
         = f.text_field :room, class: 'form-control'
   .row        
     .col-md-4
       .form-group
-        = f.label :invent_numb
+        = f.label :'Инвентарный номер'
         = f.text_field :invent_numb, class: 'form-control'
   .row
     .col-md-4 
       .form-group
-        = f.label :kind
+        = f.label :Тип
         = f.text_field :kind, class: 'form-control'
   .row        
     .col-md-4 
       .form-group
-        = f.label :status
+        = f.label :Статус
         = f.text_field :status, class: 'form-control'
   .actions
     = f.submit 'Save', class: "btn btn-success"
+    \|
+    = link_to 'Back', inventaries_path, class: "btn btn-success"

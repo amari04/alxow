@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 20161203123127) do
     t.integer  "person_id"
     t.text     "description", null: false
     t.text     "status",      null: false
-    t.text     "type",        null: false
+    t.text     "kind",        null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["person_id"], name: "index_requests_on_person_id", using: :btree
