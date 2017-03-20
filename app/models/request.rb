@@ -4,5 +4,5 @@ class Request < ApplicationRecord
   
   validates :description, presence: true
   validates :status, presence: true
-  validates :type, presence: true
+  validates :kind, presence: true
 end

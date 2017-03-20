@@ -2,14 +2,14 @@
 
 %p
   %b Person:
-  = @bedding.person
+  = @bedding.person.last_name
 %p
   %b Count:
   = @bedding.count
 %p
-  %b Type:
-  = @bedding.type
+  %b Kind:
+  = @bedding.kind
 
-= link_to 'Edit', edit_bedding_path(@bedding)
+= link_to 'Edit', edit_bedding_path(@bedding), class: "btn btn-success"
 \|
 = link_to 'Back', beddings_path, class: "btn btn-success"

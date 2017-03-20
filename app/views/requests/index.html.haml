@@ -6,7 +6,7 @@
       %th Person
       %th Description
       %th Status
-      %th Type
+      %th Kind
       %th
       %th
       %th
@@ -17,7 +17,7 @@
         %td= request.person
         %td= request.description
         %td= request.status
-        %td= request.type
+        %td= request.kind
         %td= link_to 'Show', request
         %td= link_to 'Edit', edit_request_path(request)
         %td= link_to 'Destroy', request, :method => :delete, :data => { :confirm => 'Are you sure?' }

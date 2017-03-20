@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20161203123127) do
   create_table "beddings", force: :cascade do |t|
     t.integer  "person_id"
     t.integer  "count",      null: false
-    t.text     "type",       null: false
+    t.text     "kind",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_beddings_on_person_id", using: :btree
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20161203123127) do
   create_table "inventaries", force: :cascade do |t|
     t.integer  "room_id"
     t.integer  "invent_numb", null: false
-    t.text     "type",        null: false
+    t.text     "kind",        null: false
     t.text     "status",      null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

@@ -69,6 +69,6 @@ class BeddingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bedding_params
-      params.require(:bedding).permit(:person_id, :count, :type)
+      params.require(:bedding).permit(:person_id, :count, :kind)
     end
 end
