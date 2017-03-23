@@ -1,12 +1,12 @@
 %p#notice= notice
 
 %p
-  %b Person:
-  = @student.person
+  %b ФИО:
+  = @student.person.last_name
 %p
-  %b Medical certificate:
+  %b Наличие медицинской справки:
   = @student.medical_certificate
 
-= link_to 'Edit', edit_student_path(@student), class: "btn btn-success"
+= link_to 'Редактировать', edit_student_path(@student), class: "btn btn-success"
 \|
-= link_to 'Back', students_path, class: "btn btn-success"
+= link_to 'Назад', students_path, class: "btn btn-success"

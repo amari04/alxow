@@ -1,18 +1,18 @@
 %p#notice= notice
 
 %p
-  %b Room:
+  %b Комната:
   = @inventary.room
 %p
-  %b Invent numb:
+  %b Инвентарный номер:
   = @inventary.invent_numb
 %p
-  %b Type:
+  %b Тип:
   = @inventary.kind
 %p
-  %b Status:
+  %b Статус:
   = @inventary.status
 
-= link_to 'Edit', edit_inventary_path(@inventary)
+= link_to 'Редактировать', edit_inventary_path(@inventary)
 \|
-= link_to 'Back', inventaries_path
+= link_to 'Назад', inventaries_path

@@ -1,9 +1,9 @@
 %p#notice= notice
 
 %p
-  %b Building:
+  %b Корпус:
   = @employee.building
 
-= link_to 'Edit', edit_employee_path(@employee)
+= link_to 'Редактировать', edit_employee_path(@employee)
 \|
-= link_to 'Back', employees_path, class: "btn btn-success"
+= link_to 'Назад', employees_path, class: "btn btn-success"

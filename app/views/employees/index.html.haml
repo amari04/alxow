@@ -1,9 +1,9 @@
-%h1 Listing employees
+%h1 Список сотрудников
 
 %table.table.table-striped.table-hover
   %thead
     %tr
-      %th Building
+      %th Корпус
       %th
       %th
       %th
@@ -12,10 +12,10 @@
     - @employees.each do |employee|
       %tr
         %td= employee.building
-        %td= link_to 'Show', employee
-        %td= link_to 'Edit', edit_employee_path(employee)
-        %td= link_to 'Destroy', employee, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Показать', employee
+        %td= link_to 'Редактировать', edit_employee_path(employee)
+        %td= link_to 'Удалить', employee, :method => :delete, :data => { :confirm => 'Удалить?' }
 
 %br
 
-= link_to 'New Employee', new_employee_path, class: "btn btn-success"
+= link_to 'Добавить', new_employee_path, class: "btn btn-success"

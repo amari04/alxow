@@ -6,14 +6,20 @@
         - @executor.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :request
-    = f.text_field :request
-  .field
-    = f.label :employee
-    = f.text_field :employee
-  .field
-    = f.label :executortype
-    = f.number_field :executortype
+  .row
+    .col-md-4 
+      .form-group
+        = f.label :Запрос
+        = f.text_field :request
+    .col-md-4 
+      .form-group
+        = f.label :Сотрудник
+        = f.text_field :employee
+    .col-md-4 
+      .form-group
+        = f.label :"Тип исполнителя"
+        = f.number_field :executortype
   .actions
-    = f.submit 'Save'
+    = f.submit 'Сохранить'
+    \|
+    = link_to 'Назад', executors_path

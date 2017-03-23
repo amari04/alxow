@@ -6,17 +6,25 @@
         - @guest.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :person
-    = f.text_field :person
-  .field
-    = f.label :start_date
-    = f.date_select :start_date
-  .field
-    = f.label :finish_date
-    = f.date_select :finish_date
-  .field
-    = f.label :event
-    = f.text_area :event
+   .row
+    .col-md-4 
+      .form-group
+        = f.label :ФИО
+        = f.text_field :person
+    .col-md-4 
+      .form-group
+        = f.label :"Дата заселения"
+        = f.date_select :start_date
+    .col-md-4 
+      .form-group
+        = f.label :"Дата выселения"
+        = f.date_select :finish_date
+  .row
+    .col-md-4 
+      .form-group
+        = f.label :Мероприятие
+        = f.text_area :event
   .actions
-    = f.submit 'Save'
+    = f.submit 'Сохранить'
+    \|
+    = link_to 'Назад', guests_path

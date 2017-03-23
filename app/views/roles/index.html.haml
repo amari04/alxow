@@ -1,11 +1,11 @@
-%h1 Listing roles
+%h1 Список ролей
 
 %table
   %thead
     %tr
-      %th Name
-      %th Shortname
-      %th Englishname
+      %th Название
+      %th Короткое название
+      %th Англ.название
       %th
       %th
       %th
@@ -16,10 +16,10 @@
         %td= role.name
         %td= role.shortname
         %td= role.englishname
-        %td= link_to 'Show', role
-        %td= link_to 'Edit', edit_role_path(role)
-        %td= link_to 'Destroy', role, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Показать', role
+        %td= link_to 'Редактировать', edit_role_path(role)
+        %td= link_to 'Удалить', role, :method => :delete, :data => { :confirm => 'Удалить?' }
 
 %br
 
-= link_to 'New Role', new_role_path
+= link_to 'Добавить', new_role_path

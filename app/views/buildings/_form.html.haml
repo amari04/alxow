@@ -9,12 +9,14 @@
   .row
     .col-md-4 
       .form-group
-        = f.label :address
+        = f.label :Адрес
         = f.text_field :address, class: 'form-control'
   .row
     .col-md-1 
       .form-group
-        = f.label :floor
+        = f.label :"Количество этажей"
         = f.number_field :floor, class: 'form-control'
   .actions
-    = f.submit 'Save', class: "btn btn-success"
+    = f.submit 'Сохранить', class: "btn btn-success"
+    \|
+    = link_to 'Назад', buildings_path, class: "btn btn-success"

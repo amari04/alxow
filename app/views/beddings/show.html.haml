@@ -1,15 +1,15 @@
 %p#notice= notice
 
 %p
-  %b Person:
+  %b ФИО:
   = @bedding.person.last_name
 %p
-  %b Count:
+  %b Количество:
   = @bedding.count
 %p
-  %b Kind:
+  %b Тип:
   = @bedding.kind
 
-= link_to 'Edit', edit_bedding_path(@bedding), class: "btn btn-success"
+= link_to 'Редактировать', edit_bedding_path(@bedding), class: "btn btn-success"
 \|
-= link_to 'Back', beddings_path, class: "btn btn-success"
+= link_to 'Назад', beddings_path, class: "btn btn-success"

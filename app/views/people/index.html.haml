@@ -30,9 +30,9 @@
         %td= person.organization
         %td= person.pass_date
         %td= person.address
-        %td= link_to 'Show', person, class: "btn btn-success"
-        %td= link_to 'Edit', edit_person_path(person), class: "btn btn-info"
-        %td= link_to 'Destroy', person, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-danger"
+        %td= link_to 'Показать', person, class: "btn btn-success"
+        %td= link_to 'Редактировать', edit_person_path(person), class: "btn btn-info"
+        %td= link_to 'Удалить', person, :method => :delete, :data => { :confirm => 'Удалить?' }, class: "btn btn-danger"
 
 %br
 

@@ -1,15 +1,15 @@
 %p#notice= notice
 
 %p
-  %b Name:
+  %b Название:
   = @role.name
 %p
-  %b Shortname:
+  %b Короткое название:
   = @role.shortname
 %p
-  %b Englishname:
+  %b Англ.название:
   = @role.englishname
 
-= link_to 'Edit', edit_role_path(@role)
+= link_to 'Редактировать', edit_role_path(@role)
 \|
-= link_to 'Back', roles_path
+= link_to 'Назад', roles_path

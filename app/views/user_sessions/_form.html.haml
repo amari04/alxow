@@ -1,12 +1,16 @@
 = form_tag user_sessions_path, :method => :post do
-  .field
-    = label_tag :email
-    = text_field_tag :email
-  .field
-    = label_tag :password
-    = password_field_tag :password
-  .field
-    = check_box_tag :remember, params[:remember], true
-    = label_tag :remember
+  .row
+    .col-md-4 
+      .form-group
+        = label_tag :email
+        = text_field_tag :email
+      .form-group
+        = label_tag :Пароль
+        = password_field_tag :password
+      .form-group
+        = check_box_tag :remember, params[:remember], true
+        = label_tag :Запомнить
   .actions
-    = submit_tag "Login", class: "btn btn-success"
+    = submit_tag "Вход", class: "btn btn-success"
+    \|
+    = link_to 'Регистрация', new_user_path, class: "btn btn-danger"

@@ -1,12 +1,12 @@
 %p#notice= notice
 
 %p
-  %b Address:
+  %b Адрес:
   = @building.address
 %p
-  %b Floor:
+  %b Этажность:
   = @building.floor
 
-= link_to 'Edit', edit_building_path(@building), class: "btn btn-success"
+= link_to 'Редактировать', edit_building_path(@building), class: "btn btn-success"
 \|
-= link_to 'Back', buildings_path, class: "btn btn-success"
+= link_to 'Назад', buildings_path, class: "btn btn-success"

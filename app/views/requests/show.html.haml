@@ -1,18 +1,18 @@
 %p#notice= notice
 
 %p
-  %b Person:
+  %b ФИО:
   = @request.person
 %p
-  %b Description:
+  %b Описание:
   = @request.description
 %p
-  %b Status:
+  %b Статус:
   = @request.status
 %p
-  %b Type:
+  %b Тип:
   = @request.kind
 
-= link_to 'Edit', edit_request_path(@request)
+= link_to 'Редактировать', edit_request_path(@request)
 \|
-= link_to 'Back', requests_path, class: "btn btn-success"
+= link_to 'Удалить', requests_path, class: "btn btn-success"

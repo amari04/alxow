@@ -1,15 +1,15 @@
 %p#notice= notice
 
 %p
-  %b Request:
+  %b Запрос:
   = @executor.request
 %p
-  %b Employee:
+  %b Сотрудник:
   = @executor.employee
 %p
-  %b Executortype:
+  %b Тип исполнителя:
   = @executor.executortype
 
-= link_to 'Edit', edit_executor_path(@executor)
+= link_to 'Редактировать', edit_executor_path(@executor)
 \|
-= link_to 'Back', executors_path
+= link_to 'Назад', executors_path

@@ -18,9 +18,9 @@
         %td= inventary.invent_numb
         %td= inventary.kind
         %td= inventary.status
-        %td= link_to 'Show', inventary
-        %td= link_to 'Edit', edit_inventary_path(inventary)
-        %td= link_to 'Destroy', inventary, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Показать', inventary
+        %td= link_to 'Редактировать', edit_inventary_path(inventary)
+        %td= link_to 'Удалить', inventary, :method => :delete, :data => { :confirm => 'Удалить?' }
 
 %br
 

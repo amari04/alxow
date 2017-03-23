@@ -1,18 +1,18 @@
 %p#notice= notice
 
 %p
-  %b Person:
+  %b ФИО:
   = @guest.person
 %p
-  %b Start date:
+  %b Дата заселения:
   = @guest.start_date
 %p
-  %b Finish date:
+  %b Дата выселения:
   = @guest.finish_date
 %p
-  %b Event:
+  %b Мероприятие:
   = @guest.event
 
-= link_to 'Edit', edit_guest_path(@guest)
+= link_to 'Редактировать', edit_guest_path(@guest)
 \|
-= link_to 'Back', guests_path
+= link_to 'Назад', guests_path

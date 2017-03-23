@@ -1,18 +1,18 @@
 %p#notice= notice
 
 %p
-  %b Student:
+  %b Студент:
   = @payment.student
 %p
-  %b Worker:
+  %b Сотрудник:
   = @payment.worker
 %p
-  %b Cost:
+  %b Стоимость:
   = @payment.cost
 %p
-  %b Status:
+  %b Статус:
   = @payment.status
 
-= link_to 'Edit', edit_payment_path(@payment)
+= link_to 'Редактировать', edit_payment_path(@payment)
 \|
-= link_to 'Back', payments_path
+= link_to 'Назад', payments_path
