@@ -1,12 +1,12 @@
-%h1 Listing rooms
+%h1 Список комнат
 
 %table.table.table-striped.table-hover
   %thead
     %tr
-      %th Count living space
-      %th Square
-      %th Bathroom
-      %th Toilet
+      %th Количество мест
+      %th Площадь
+      %th Ванная
+      %th Туалет
       %th
       %th
       %th
@@ -18,10 +18,10 @@
         %td= room.square
         %td= room.bathroom
         %td= room.toilet
-        %td= link_to 'Show', room
-        %td= link_to 'Edit', edit_room_path(room)
-        %td= link_to 'Destroy', room, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Показать', room
+        %td= link_to 'Редактировать', edit_room_path(room)
+        %td= link_to 'Удалить', room, :method => :delete, :data => { :confirm => 'Удалить?' }
 
 %br
 
-= link_to 'New Room', new_room_path, class: "btn btn-success"
+= link_to 'Добавить', new_room_path, class: "btn btn-success"

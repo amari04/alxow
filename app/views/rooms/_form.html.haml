@@ -8,16 +8,18 @@
   .row
     .col-md-2 
       .form-group
-        = f.label :count_living_space
+        = f.label :"Количество мест"
         = f.number_field :count_living_space, class: 'form-control'
       .form-group
-        = f.label :square
+        = f.label :Площадь
         = f.number_field :square, class: 'form-control'
       .form-group
-        = f.label :bathroom
+        = f.label :Ванная
         = f.check_box :bathroom, class: 'input-group-addon'
       .form-group
-        = f.label :toilet
+        = f.label :Туалет
         = f.check_box :toilet, type: 'radio', class: 'input-group-addon'
   .actions
-    = f.submit 'Save', class: "btn btn-success"
+    = f.submit 'Сохранить', class: "btn btn-success"
+    \|
+    = link_to 'Назад', rooms_path, class: "btn btn-success"

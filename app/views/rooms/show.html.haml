@@ -1,18 +1,18 @@
 %p#notice= notice
 
 %p
-  %b Count living space:
+  %b Количество мест:
   = @room.count_living_space
 %p
-  %b Square:
+  %b Площадь:
   = @room.square
 %p
-  %b Bathroom:
+  %b Ванная:
   = @room.bathroom
 %p
-  %b Toilet:
+  %b Туалет:
   = @room.toilet
 
-= link_to 'Edit', edit_room_path(@room)
+= link_to 'Редактировать', edit_room_path(@room)
 \|
-= link_to 'Back', rooms_path, class: "btn btn-success"
+= link_to 'Назад', rooms_path, class: "btn btn-success"

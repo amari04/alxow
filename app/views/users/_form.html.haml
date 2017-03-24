@@ -6,17 +6,15 @@
         = f.label :email
         = f.text_field :email, class: 'form-control'
         = f.error_messages_for :email
-    .col-md-4 
       .form-group
         = f.label :Пароль
         = f.text_field :password, class: 'form-control'
         = f.error_messages_for :password
-    .col-md-4 
       .form-group
         = f.label :'Подтверждение пароля'
         = f.text_field :password_confirmation, class: 'form-control'
         = f.error_messages_for :password_confirmation
   .actions
-    = f.submit 'Save', class: "btn btn-success"
+    = f.submit 'Сохранить', class: "btn btn-danger"
     \|
-    = link_to 'Back', users_path, class: "btn btn-success"
+    = link_to 'Назад', users_path, class: "btn btn-success"

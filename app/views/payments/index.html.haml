@@ -4,29 +4,6 @@
   %thead
     %tr
       %th Студент
-      %th Стоимость
-      %th Статус оплаты
-      %th
-      %th
-      %th
-
-  %tbody
-    - @payments.each do |payment|
-      %tr
-        %td= payment.student
-        %td= payment.cost
-        %td= payment.status
-        %td= link_to 'Показать', payment
-        %td= link_to 'Редактировать', edit_payment_path(payment)
-        %td= link_to 'Удалить', payment, :method => :delete, :data => { :confirm => 'Удалить?' }
-
-%br
-
-= link_to 'Добавить', new_payment_path, class: "btn btn-success"
-
-%table.table.table-striped.table-hover
-  %thead
-    %tr
       %th Сотрудник
       %th Стоимость
       %th Статус оплаты
@@ -37,6 +14,7 @@
   %tbody
     - @payments.each do |payment|
       %tr
+        %td= payment.student
         %td= payment.worker
         %td= payment.cost
         %td= payment.status
@@ -47,3 +25,4 @@
 %br
 
 = link_to 'Добавить', new_payment_path, class: "btn btn-success"
+

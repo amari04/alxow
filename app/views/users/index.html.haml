@@ -16,9 +16,9 @@
         %td= user.email
         %td= user.crypted_password
         %td= user.salt
-        %td= link_to 'Show', user, class: "btn btn-success"
-        %td= link_to 'Edit', edit_user_path(user), class: "btn btn-info"
-        %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-danger"
+        %td= link_to 'Показать', user, class: "btn btn-success"
+        %td= link_to 'Редактировать', edit_user_path(user), class: "btn btn-info"
+        %td= link_to 'Удалть', user, :method => :delete, :data => { :confirm => 'Удалть?' }, class: "btn btn-danger"
 
 %br
 
