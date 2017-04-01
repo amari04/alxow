@@ -1,11 +1,11 @@
-%h1 Listing role_users
+%h1 Список роль-пользователь
 
-%table
+%table.table.table-striped.table-hover
   %thead
     %tr
-      %th Role
-      %th User
-      %th Data
+      %th Роль
+      %th Пользователь
+      %th Данные
       %th
       %th
       %th
@@ -16,10 +16,10 @@
         %td= role_user.role
         %td= role_user.user
         %td= role_user.data
-        %td= link_to 'Show', role_user
-        %td= link_to 'Edit', edit_role_user_path(role_user)
-        %td= link_to 'Destroy', role_user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Показать', role_user, class: "btn btn-success"
+        %td= link_to 'Редактировать', edit_role_user_path(role_user), class: "btn btn-info"
+        %td= link_to 'Удалить', role_user, :method => :delete, :data => { :confirm => 'Удалить?' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'New Role user', new_role_user_path
+= link_to 'Добавить', new_role_user_path, class: "btn btn-success"

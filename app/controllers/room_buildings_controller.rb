@@ -28,7 +28,7 @@ class RoomBuildingsController < ApplicationController
 
     respond_to do |format|
       if @room_building.save
-        format.html { redirect_to @room_building, notice: 'Room building was successfully created.' }
+        format.html { redirect_to @room_building, notice: 'Успешно добавлено' }
         format.json { render :show, status: :created, location: @room_building }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RoomBuildingsController < ApplicationController
   def update
     respond_to do |format|
       if @room_building.update(room_building_params)
-        format.html { redirect_to @room_building, notice: 'Room building was successfully updated.' }
+        format.html { redirect_to @room_building, notice: 'Успешно отредактировано' }
         format.json { render :show, status: :ok, location: @room_building }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class RoomBuildingsController < ApplicationController
   def destroy
     @room_building.destroy
     respond_to do |format|
-      format.html { redirect_to room_buildings_url, notice: 'Room building was successfully destroyed.' }
+      format.html { redirect_to room_buildings_url, notice: 'Успешно удалено' }
       format.json { head :no_content }
     end
   end

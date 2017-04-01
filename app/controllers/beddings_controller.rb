@@ -28,7 +28,7 @@ class BeddingsController < ApplicationController
 
     respond_to do |format|
       if @bedding.save
-        format.html { redirect_to @bedding, notice: 'Bedding was successfully created.' }
+        format.html { redirect_to @bedding, notice: 'Успешно добавлено' }
         format.json { render :show, status: :created, location: @bedding }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BeddingsController < ApplicationController
   def update
     respond_to do |format|
       if @bedding.update(bedding_params)
-        format.html { redirect_to @bedding, notice: 'Bedding was successfully updated.' }
+        format.html { redirect_to @bedding, notice: 'Успешно отредактировано' }
         format.json { render :show, status: :ok, location: @bedding }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class BeddingsController < ApplicationController
   def destroy
     @bedding.destroy
     respond_to do |format|
-      format.html { redirect_to beddings_url, notice: 'Bedding was successfully destroyed.' }
+      format.html { redirect_to beddings_url, notice: 'Удалено' }
       format.json { head :no_content }
     end
   end

@@ -5,15 +5,20 @@
       %ul
         - @role.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :Название
-    = f.text_area :name
-  .field
-    = f.label :"Короткое название"
-    = f.text_area :shortname
-  .field
-    = f.label :"Англ.название"
-    = f.text_area :englishname
+  .row        
+    .col-md-4
+      .form-group
+        = f.label :Название
+        = f.text_field :name, class: 'form-control'
+    .col-md-4
+      .form-group
+        = f.label :"Короткое название"
+        = f.text_field :shortname, class: 'form-control'
+    .col-md-4
+      .form-group
+        = f.label :"Англ название"
+        = f.text_field :englishname, class: 'form-control'
   .actions
-    = f.submit 'Сохранить'
+    = f.submit 'Сохранить', class: "btn btn-success"
+    \|   
+    = link_to 'Назад', roles_path, class: "btn btn-success"

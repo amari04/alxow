@@ -19,7 +19,7 @@
     .col-md-4 
       .form-group
         = f.label :Тип
-        = f.text_field :kind, class: 'form-control'
+        = f.select :kind, options_for_select(invent_options()), {}, class: 'form-control'
   .row        
     .col-md-4 
       .form-group

@@ -28,7 +28,7 @@ class ExecutorsController < ApplicationController
 
     respond_to do |format|
       if @executor.save
-        format.html { redirect_to @executor, notice: 'Executor was successfully created.' }
+        format.html { redirect_to @executor, notice: 'Успешно добавлено' }
         format.json { render :show, status: :created, location: @executor }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ExecutorsController < ApplicationController
   def update
     respond_to do |format|
       if @executor.update(executor_params)
-        format.html { redirect_to @executor, notice: 'Executor was successfully updated.' }
+        format.html { redirect_to @executor, notice: 'Успешно отредактировано' }
         format.json { render :show, status: :ok, location: @executor }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ExecutorsController < ApplicationController
   def destroy
     @executor.destroy
     respond_to do |format|
-      format.html { redirect_to executors_url, notice: 'Executor was successfully destroyed.' }
+      format.html { redirect_to executors_url, notice: 'Успешно удалено' }
       format.json { head :no_content }
     end
   end

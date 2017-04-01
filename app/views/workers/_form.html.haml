@@ -10,8 +10,8 @@
     .col-md-4
       .form-group
         = f.label :Должность
-        = f.text_field :position
+        = f.select :position, options_for_select(worker_options()), {}, class: 'form-control'
   .actions
-    = f.submit 'Save', class: "btn btn-success"
+    = f.submit 'Сохранить', class: "btn btn-success"
     \|
-    = link_to 'Back', workers_path, class: "btn btn-success"
+    = link_to 'Назад', workers_path, class: "btn btn-success"

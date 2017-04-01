@@ -10,7 +10,7 @@
     .col-md-4
       .form-group
         = f.label :ФИО
-        = f.text_field :person, class: 'form-control'
+        = f.select :person_id, options_for_select(per_options()), {}, class: 'form-control'
       .form-group
         = f.label :Описание
         = f.text_area :description, class: 'form-control'
@@ -18,12 +18,12 @@
     .col-md-4
       .form-group
         = f.label :Статус
-        = f.text_field :status, class: 'form-control'
+        = f.select :status, options_for_select(status_options()), {}, class: 'form-control'
   .row
     .col-md-4
       .form-group
         = f.label :Тип
-        = f.text_field :kind, class: 'form-control'
+        = f.select :kind, options_for_select(request_options()), {}, class: 'form-control'
   .actions
     = f.submit 'Сохранить', class: "btn btn-success"
     \|

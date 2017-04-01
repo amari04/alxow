@@ -28,7 +28,7 @@ class InventariesController < ApplicationController
 
     respond_to do |format|
       if @inventary.save
-        format.html { redirect_to @inventary, notice: 'Inventary was successfully created.' }
+        format.html { redirect_to @inventary, notice: 'Успешно добавлено' }
         format.json { render :show, status: :created, location: @inventary }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class InventariesController < ApplicationController
   def update
     respond_to do |format|
       if @inventary.update(inventary_params)
-        format.html { redirect_to @inventary, notice: 'Inventary was successfully updated.' }
+        format.html { redirect_to @inventary, notice: 'Успешно отредактировано' }
         format.json { render :show, status: :ok, location: @inventary }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class InventariesController < ApplicationController
   def destroy
     @inventary.destroy
     respond_to do |format|
-      format.html { redirect_to inventaries_url, notice: 'Inventary was successfully destroyed.' }
+      format.html { redirect_to inventaries_url, notice: 'Успешно удалено' }
       format.json { head :no_content }
     end
   end

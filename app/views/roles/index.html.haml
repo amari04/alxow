@@ -1,6 +1,6 @@
 %h1 Список ролей
 
-%table
+%table.table.table-striped.table-hover
   %thead
     %tr
       %th Название
@@ -16,10 +16,10 @@
         %td= role.name
         %td= role.shortname
         %td= role.englishname
-        %td= link_to 'Показать', role
-        %td= link_to 'Редактировать', edit_role_path(role)
-        %td= link_to 'Удалить', role, :method => :delete, :data => { :confirm => 'Удалить?' }
+        %td= link_to 'Показать', role, class: "btn btn-success"
+        %td= link_to 'Редактировать', edit_role_path(role), class: "btn btn-info"
+        %td= link_to 'Удалить', role, :method => :delete, :data => { :confirm => 'Удалить?' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'Добавить', new_role_path
+= link_to 'Добавить', new_role_path, class: "btn btn-success"

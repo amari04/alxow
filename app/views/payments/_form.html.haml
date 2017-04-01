@@ -9,7 +9,7 @@
     .col-md-4 
       .form-group
         = f.label :Студент
-        = f.text_field :student, class: 'form-control'
+        = f.select :student, options_for_select(payment_options()), {}, class: 'form-control'
       .form-group
         = f.label :Стоимость
         = f.text_field :cost, class: 'form-control'
@@ -20,7 +20,7 @@
     .col-md-4 
       .form-group
         = f.label :Сотрудник
-        = f.text_field :worker, class: 'form-control'
+        = f.select :worker, options_for_select(payment_options()), {}, class: 'form-control'
       .form-group
         = f.label :Стоимость
         = f.text_field :cost, class: 'form-control'
