@@ -1,6 +1,9 @@
 %p#notice= notice
 
 %p
+  %b № комнаты:
+  = @inventary.room_number
+%p
   %b Комната:
   = @inventary.room
 %p
@@ -13,6 +16,6 @@
   %b Статус:
   = @inventary.status
 
-= link_to 'Редактировать', edit_inventary_path(@inventary)
+= link_to 'Редактировать', edit_inventary_path(@inventary), class: "btn btn-success"
 \|
-= link_to 'Назад', inventaries_path
+= link_to 'Назад', inventaries_path, class: "btn btn-success"

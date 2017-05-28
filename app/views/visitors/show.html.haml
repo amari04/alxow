@@ -1,18 +1,18 @@
 %p#notice= notice
 
 %p
-  %b Person:
+  %b ФИО:
   = @visitor.person
 %p
-  %b Start date:
+  %b Заезд:
   = @visitor.start_date
 %p
-  %b Finish date:
+  %b Выезд:
   = @visitor.finish_date
 %p
-  %b Accommodation:
+  %b Проживание:
   = @visitor.accommodation
 
-= link_to 'Edit', edit_visitor_path(@visitor)
+= link_to 'Редактировать', edit_visitor_path(@visitor), class: "btn btn-success"
 \|
-= link_to 'Back', visitors_path
+= link_to 'Назад', visitors_path, class: "btn btn-success"

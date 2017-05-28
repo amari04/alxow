@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
         end
       end
       # Сохраняем в сессию, чтобы данная роль была выбрана и дальше
+      # raise @current_role_user.inspect
       unless @current_role_user.nil?
         session[:user_role_id] = @current_role_user.id
       end  
@@ -37,7 +38,7 @@ class ApplicationController < ActionController::Base
   private
   ## Проверка прав доступа выбранной роли для данного метода
   def check_ctr_auth()
-    return @current_role_user.is_admin?
+    return @current_role_user.try(:is_admin?)
   end
   
   def not_authenticated

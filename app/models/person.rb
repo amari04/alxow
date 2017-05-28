@@ -5,6 +5,8 @@ class Person < ApplicationRecord
   has_many :beddings
   has_many :requests
   has_one :employees
+  
+  belongs_to :user
    
    validates :last_name, presence: true
    validates :first_name, presence: true

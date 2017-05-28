@@ -12,9 +12,9 @@
     - @employees.each do |employee|
       %tr
         %td= employee.building
-        %td= link_to 'Показать', employee
-        %td= link_to 'Редактировать', edit_employee_path(employee)
-        %td= link_to 'Удалить', employee, :method => :delete, :data => { :confirm => 'Удалить?' }
+        %td= link_to 'Показать', employee, class: "btn btn-success"
+        %td= link_to 'Редактировать', edit_employee_path(employee), class: "btn btn-info"
+        %td= link_to 'Удалить', employee, :method => :delete, :data => { :confirm => 'Удалить?' }, class: "btn btn-danger"
 
 %br
 

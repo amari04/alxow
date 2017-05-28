@@ -13,6 +13,6 @@
   %b Мероприятие:
   = @guest.event
 
-= link_to 'Редактировать', edit_guest_path(@guest)
+= link_to 'Редактировать', edit_guest_path(@guest), class: "btn btn-success"
 \|
-= link_to 'Назад', guests_path
+= link_to 'Назад', guests_path, class: "btn btn-success"

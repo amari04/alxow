@@ -4,6 +4,29 @@
   %thead
     %tr
       %th Студент
+      %th Стоимость
+      %th Статус оплаты
+      %th
+      %th
+      %th
+
+  %tbody
+  
+    - @payments.each do |payment|
+      -next if payment.student.nil?
+      %tr
+        %td= payment.student.try(:person).try(:last_name)
+        %td= payment.cost
+        %td= payment.status
+        %td= link_to 'Показать', payment, class: "btn btn-success"
+        %td= link_to 'Редактировать', edit_payment_path(payment), class: "btn btn-info"
+        %td= link_to 'Удалить', payment, :method => :delete, :data => { :confirm => 'Удалить?' }, class: "btn btn-danger"
+%br
+
+= link_to 'Добавить', new_payment_path(type: :student), class: "btn btn-success"
+%table.table.table-striped.table-hover
+  %thead
+    %tr
       %th Сотрудник
       %th Стоимость
       %th Статус оплаты
@@ -12,17 +35,17 @@
       %th
 
   %tbody
+  
     - @payments.each do |payment|
+      -next if payment.worker.nil?
       %tr
-        %td= payment.student
-        %td= payment.worker
+        %td= payment.worker.try(:person).try(:last_name)
         %td= payment.cost
         %td= payment.status
-        %td= link_to 'Показать', payment
-        %td= link_to 'Редактировать', edit_payment_path(payment)
-        %td= link_to 'Удалить', payment, :method => :delete, :data => { :confirm => 'Удалить?' }
+        %td= link_to 'Показать', payment, class: "btn btn-success"
+        %td= link_to 'Редактировать', edit_payment_path(payment), class: "btn btn-info"
+        %td= link_to 'Удалить', payment, :method => :delete, :data => { :confirm => 'Удалить?' }, class: "btn btn-danger"
 
 %br
-
-= link_to 'Добавить', new_payment_path, class: "btn btn-success"
+= link_to 'Добавить', new_payment_path(type: :employee), class: "btn btn-success"
 

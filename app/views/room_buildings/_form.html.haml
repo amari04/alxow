@@ -7,16 +7,16 @@
           %li= msg
 
   .field
-    = f.label :room
+    = f.label :Комната
     = f.text_field :room
   .field
-    = f.label :building
+    = f.label :Корпус
     = f.text_field :building
   .field
-    = f.label :floor
+    = f.label :Этаж
     = f.number_field :floor
   .field
-    = f.label :attribute
+    = f.label :Атрибуты
     = f.text_area :attribute
   .actions
-    = f.submit 'Save'
+    = f.submit 'Сохранить', class: "btn btn-success"

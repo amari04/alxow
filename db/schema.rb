@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161203123127) do
+ActiveRecord::Schema.define(version: 20170513132122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20161203123127) do
     t.text     "status",      null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "room_number", null: false
     t.index ["room_id"], name: "index_inventaries_on_room_id", using: :btree
   end
 
@@ -98,7 +99,9 @@ ActiveRecord::Schema.define(version: 20161203123127) do
     t.text     "address",      null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "user_id"
     t.index ["series", "number"], name: "index_people_on_series_and_number", unique: true, using: :btree
+    t.index ["user_id"], name: "index_people_on_user_id", using: :btree
   end
 
   create_table "posts", force: :cascade do |t|
@@ -157,7 +160,7 @@ ActiveRecord::Schema.define(version: 20161203123127) do
 
   create_table "students", force: :cascade do |t|
     t.integer  "person_id"
-    t.boolean  "medical_certificate", null: false
+    t.boolean  "medical_certificate"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.index ["person_id"], name: "index_students_on_person_id", using: :btree
@@ -207,6 +210,7 @@ ActiveRecord::Schema.define(version: 20161203123127) do
   add_foreign_key "inventaries", "rooms"
   add_foreign_key "payments", "students"
   add_foreign_key "payments", "workers"
+  add_foreign_key "people", "users"
   add_foreign_key "requests", "people"
   add_foreign_key "role_users", "roles"
   add_foreign_key "role_users", "users"

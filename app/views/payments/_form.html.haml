@@ -5,28 +5,30 @@
       %ul
         - @payment.errors.full_messages.each do |msg|
           %li= msg
-  .row
-    .col-md-4 
-      .form-group
-        = f.label :Студент
-        = f.select :student, options_for_select(payment_options()), {}, class: 'form-control'
-      .form-group
-        = f.label :Стоимость
-        = f.text_field :cost, class: 'form-control'
-      .form-group
-        = f.label :'Статус оплаты'
-        = f.check_box :status
-  .row
-    .col-md-4 
-      .form-group
-        = f.label :Сотрудник
-        = f.select :worker, options_for_select(payment_options()), {}, class: 'form-control'
-      .form-group
-        = f.label :Стоимость
-        = f.text_field :cost, class: 'form-control'
-      .form-group
-        = f.label :'Статус оплаты'
-        = f.check_box :status
+  -if params[:type] == "student"
+    .row
+      .col-md-4 
+        .form-group
+          = f.label :Студент
+          = f.select :student_id, options_for_select(payment_options()), {}, class: 'form-control'
+        .form-group
+          = f.label :Стоимость
+          = f.text_field :cost, class: 'form-control'
+        .form-group
+          = f.label :'Статус оплаты'
+          = f.check_box :status
+  -if params[:type] == "employee"
+    .row
+      .col-md-4 
+        .form-group
+          = f.label :Сотрудник
+          = f.select :worker_id, options_for_select(payment_options()), {}, class: 'form-control'
+        .form-group
+          = f.label :Стоимость
+          = f.text_field :cost, class: 'form-control'
+        .form-group
+          = f.label :'Статус оплаты'
+          = f.check_box :status
   .actions
     = f.submit 'Сохранить', class: "btn btn-success"
     \|

@@ -3,6 +3,7 @@
 %table.table.table-striped.table-hover
   %thead
     %tr
+      %th № комнаты
       %th Комната
       %th Инвентарный номер
       %th Тип
@@ -14,13 +15,14 @@
   %tbody
     - @inventaries.each do |inventary|
       %tr
+        %td= inventary.room_number
         %td= inventary.room
         %td= inventary.invent_numb
         %td= inventary.kind
         %td= inventary.status
-        %td= link_to 'Показать', inventary
-        %td= link_to 'Редактировать', edit_inventary_path(inventary)
-        %td= link_to 'Удалить', inventary, :method => :delete, :data => { :confirm => 'Удалить?' }
+        %td= link_to 'Показать', inventary, class: "btn btn-success"
+        %td= link_to 'Редактировать', edit_inventary_path(inventary), class: "btn btn-info"
+        %td= link_to 'Удалить', inventary, :method => :delete, :data => { :confirm => 'Удалить?' }, class: "btn btn-danger"
 
 %br
 

@@ -3,6 +3,7 @@
 %table.table.table-striped.table-hover
   %thead
     %tr
+      %th id
       %th Фамилия
       %th Имя
       %th Очество
@@ -20,6 +21,7 @@
   %tbody
     - @people.each do |person|
       %tr
+        %td= person.user.email
         %td= person.last_name
         %td= person.first_name
         %td= person.second_name

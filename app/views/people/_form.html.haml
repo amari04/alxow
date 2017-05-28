@@ -9,6 +9,10 @@
   .row
     .col-md-4 
       .form-group
+        = f.label :Пользователь
+        = f.select :user_id, options_for_select(user_options()), {}, class: 'form-control'
+    .col-md-4 
+      .form-group
         = f.label :Фамилия
         = f.text_field :last_name, class: 'form-control'
     .col-md-4 

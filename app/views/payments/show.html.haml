@@ -2,10 +2,10 @@
 
 %p
   %b Студент:
-  = @payment.student
+  = @payment.student.try(:person).try(:last_name)
 %p
   %b Сотрудник:
-  = @payment.worker
+  = @payment.worker.try(:person).try(:last_name)
 %p
   %b Стоимость:
   = @payment.cost
@@ -13,6 +13,6 @@
   %b Статус:
   = @payment.status
 
-= link_to 'Редактировать', edit_payment_path(@payment)
+= link_to 'Редактировать', edit_payment_path(@payment), class: "btn btn-success"
 \|
-= link_to 'Назад', payments_path
+= link_to 'Назад', payments_path, class: "btn btn-success"

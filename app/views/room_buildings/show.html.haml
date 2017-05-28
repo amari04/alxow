@@ -1,18 +1,18 @@
 %p#notice= notice
 
 %p
-  %b Room:
+  %b Комната:
   = @room_building.room
 %p
-  %b Building:
+  %b Корпус:
   = @room_building.building
 %p
-  %b Floor:
+  %b Этаж:
   = @room_building.floor
 %p
-  %b Attribute:
+  %b Атрибуты:
   = @room_building.attribute
 
-= link_to 'Edit', edit_room_building_path(@room_building)
+= link_to 'Редактировать', edit_room_building_path(@room_building), class: "btn btn-success"
 \|
-= link_to 'Back', room_buildings_path
+= link_to 'Назад', room_buildings_path, class: "btn btn-success"

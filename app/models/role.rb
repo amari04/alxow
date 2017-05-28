@@ -11,10 +11,14 @@ def self.create_main_roles
     r2 = Role.find_or_create_by(englishname: 'employee', 
       shortname: 'Сотр',
       name: 'Сотрудник')
-    [r1, r2]
+    r3 = Role.find_or_create_by(englishname: 'student', 
+      shortname: 'Студ',
+      name: 'Студент')
+    [r1, r2, r3]
+    
   end
 
-  ROLE_FOR_METHODS = ['admin', 'employee']
+  ROLE_FOR_METHODS = ['admin', 'employee', 'student']
   
   ROLE_FOR_METHODS.each do |rname|
     define_method "is_#{rname}?" do

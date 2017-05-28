@@ -3,9 +3,9 @@
 %table
   %thead
     %tr
-      %th Request
-      %th Employee
-      %th Executortype
+      %th Запрос
+      %th Сотрудник
+      %th Тип исполнителя
       %th
       %th
       %th
@@ -16,10 +16,10 @@
         %td= executor.request
         %td= executor.employee
         %td= executor.executortype
-        %td= link_to 'Show', executor
-        %td= link_to 'Edit', edit_executor_path(executor)
-        %td= link_to 'Destroy', executor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Показать', executor, class: "btn btn-success"
+        %td= link_to 'Редактировать', edit_executor_path(executor), class: "btn btn-info"
+        %td= link_to 'Удалить', executor, :method => :delete, :data => { :confirm => 'Удалить?' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'New Executor', new_executor_path
+= link_to 'Добавить', new_executor_path, class: "btn btn-success"

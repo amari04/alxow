@@ -18,10 +18,10 @@
         %td= guest.start_date
         %td= guest.finish_date
         %td= guest.event
-        %td= link_to 'Показать', guest
-        %td= link_to 'Редактировать', edit_guest_path(guest)
-        %td= link_to 'Удалить', guest, :method => :delete, :data => { :confirm => 'Удалить?' }
+        %td= link_to 'Показать', guest, class: "btn btn-success"
+        %td= link_to 'Редактировать', edit_guest_path(guest), class: "btn btn-info"
+        %td= link_to 'Удалить', guest, :method => :delete, :data => { :confirm => 'Удалить?' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'Добавить', new_guest_path
+= link_to 'Добавить', new_guest_path, class: "btn btn-success"

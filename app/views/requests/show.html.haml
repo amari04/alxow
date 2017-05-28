@@ -13,6 +13,6 @@
   %b Тип:
   = @request.kind
 
-= link_to 'Редактировать', edit_request_path(@request)
+= link_to 'Редактировать', edit_request_path(@request), class: "btn btn-success"
 \|
 = link_to 'Удалить', requests_path, class: "btn btn-success"

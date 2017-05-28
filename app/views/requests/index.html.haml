@@ -18,9 +18,9 @@
         %td= request.description
         %td= request.status
         %td= request.kind
-        %td= link_to 'Показать', request
-        %td= link_to 'Редактировать', edit_request_path(request)
-        %td= link_to 'Удалить', request, :method => :delete, :data => { :confirm => 'Удалить?' }
+        %td= link_to 'Показать', request, class: "btn btn-success"
+        %td= link_to 'Редактировать', edit_request_path(request), class: "btn btn-info"
+        %td= link_to 'Удалить', request, :method => :delete, :data => { :confirm => 'Удалить?' }, class: "btn btn-danger"
 
 %br
 

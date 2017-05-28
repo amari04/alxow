@@ -6,6 +6,10 @@
         - @inventary.errors.full_messages.each do |msg|
           %li= msg
   .row
+    .col-md-2 
+      .form-group
+        = f.label :"№ комнаты"
+        = f.text_field :room_number, class: 'form-control'
     .col-md-4 
       .form-group
         = f.label :Комната

@@ -25,6 +25,6 @@
         = f.label :Мероприятие
         = f.text_area :event
   .actions
-    = f.submit 'Сохранить'
+    = f.submit 'Сохранить', class: "btn btn-success"
     \|
-    = link_to 'Назад', guests_path
+    = link_to 'Назад', guests_path, class: "btn btn-success"

@@ -80,6 +80,10 @@ module SideBarHelper
        :class => 'long' },
       {:name => 'Добавление', :controller => :people,
        :action => :new, :icon => 'plus'},
+      {:name => 'Роли', :controller => :roles,
+       :action => :index,  :icon => 'file-text-o'},
+      {:name => 'Добавить роль', :controller => :roles,
+       :action => :new, :icon => 'plus'}
     ]} 
     result
   end

@@ -20,6 +20,6 @@
         = f.label :"Тип исполнителя"
         = f.number_field :executortype
   .actions
-    = f.submit 'Сохранить'
+    = f.submit 'Сохранить', class: "btn btn-success"
     \|
-    = link_to 'Назад', executors_path
+    = link_to 'Назад', executors_path, class: "btn btn-success"

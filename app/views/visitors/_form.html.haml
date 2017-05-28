@@ -7,16 +7,16 @@
           %li= msg
 
   .field
-    = f.label :person
+    = f.label :ФИО
     = f.text_field :person
   .field
-    = f.label :start_date
+    = f.label :Заезд
     = f.date_select :start_date
   .field
-    = f.label :finish_date
+    = f.label :Выезд
     = f.date_select :finish_date
   .field
-    = f.label :accommodation
+    = f.label :Проживание
     = f.check_box :accommodation
   .actions
-    = f.submit 'Save'
+    = f.submit 'Сохранить', class: "btn btn-success" 

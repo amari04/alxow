@@ -3,10 +3,10 @@
 %table
   %thead
     %tr
-      %th Person
-      %th Start date
-      %th Finish date
-      %th Accommodation
+      %th ФИО
+      %th Заезд
+      %th Выезд
+      %th Проживание
       %th
       %th
       %th
@@ -18,10 +18,10 @@
         %td= visitor.start_date
         %td= visitor.finish_date
         %td= visitor.accommodation
-        %td= link_to 'Show', visitor
-        %td= link_to 'Edit', edit_visitor_path(visitor)
-        %td= link_to 'Destroy', visitor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Показать', visitor, class: "btn btn-success"
+        %td= link_to 'Редактировать', edit_visitor_path(visitor), class: "btn btn-info"
+        %td= link_to 'Удалить', visitor, :method => :delete, :data => { :confirm => 'Удалить?' }, class: "btn btn-danger"
 
 %br
 
-= link_to 'New Visitor', new_visitor_path
+= link_to 'Добавление', new_visitor_path, class: "btn btn-success"
