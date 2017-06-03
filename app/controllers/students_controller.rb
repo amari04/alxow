@@ -66,7 +66,24 @@ class StudentsController < ApplicationController
     def set_student
       @student = Student.find(params[:id])
     end
-
+    
+    
+def check_ctr_auth()
+    return true if @current_role_user.try(:is_admin?)
+    case action_name.to_sym
+    when :show
+      @student = Student.find(params[:id]) 
+      if @current_role_user.user_id == @student.try(:user_id)
+        return true
+      else
+        return false
+      end
+    when :index
+       return true
+    else
+       return false
+    end
+  end
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
       params.require(:student).permit(:person_id, :medical_certificate)
