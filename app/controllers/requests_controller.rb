@@ -66,7 +66,25 @@ class RequestsController < ApplicationController
     def set_request
       @request = Request.find(params[:id])
     end
+  def check_ctr_auth()
+    return true if @current_role_user.try(:is_admin?)
+    case action_name.to_sym
+    when :show
+      @request = Request.find(params[:id]) 
+      if @current_role_user.user_id == @request.student.try(:user_id)
+        return true
+      else
+        return false
+      end
+    when :new
+        return true if @current_role_user.try(:is_stud?)
 
+    when :index
+       return true
+    else
+       return false
+    end
+  end
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
       params.require(:request).permit(:person_id, :description, :status, :kind)

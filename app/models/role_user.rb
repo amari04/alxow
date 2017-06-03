@@ -19,4 +19,11 @@ class RoleUser < ApplicationRecord
       false
     end  
   end
+  def is_stud?
+    if self.role.name == 'Студент'
+      return true
+    else
+      false
+    end  
+  end
 end
