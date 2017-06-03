@@ -8,7 +8,7 @@ module SideBarHelper
       {:name => 'Заселить',
        :icon => 'plus',
        :controller => :students, :action => :new,},
-      {:name => 'Сотрудники', :icon => 'wheelchair-alt', :class => 'long', :controller => :workers, :action => :index,},
+      {:name => 'Сотрудники', :icon => 'briefcase', :controller => :workers, :action => :index,},
       {:name => 'Студенты',
        :icon => 'archive', 
        :controller => :students, :action => :index,},
@@ -32,7 +32,7 @@ module SideBarHelper
        :icon => 'plus',
        :controller => :requests, :action => :new,},
       {:name => 'Все заявки',
-       :icon => 'archive', 
+       :icon => 'laptop', 
        :controller => :requests, :action => :index,}
        ]}
         
