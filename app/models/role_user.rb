@@ -26,4 +26,12 @@ class RoleUser < ApplicationRecord
       false
     end  
   end
+  def is_operator?
+    if self.role.name == 'Оператор'
+      return true
+    else
+      false
+    end
+  end
+  
 end
